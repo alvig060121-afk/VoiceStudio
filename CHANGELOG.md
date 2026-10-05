@@ -129,6 +129,9 @@ This release also adds a GPU acceleration panel with honest Radeon reporting, th
 
 ### Fixed
 
+- Voice cloning on 8 GB unified-memory Macs frees the reference speech model before synthesis, so cloning no longer swaps until it times out (#2619)
+- Voice-clone references without a transcript are encoded once per engine process and logged without their spoken text (#2619)
+- Reference passages trim leading and trailing silence before selection, so clones no longer start or end mid-pause (#2619)
 - Voice cloning finds a speech-to-text model installed through Model Catalogue instead of asking you to install one (#2442, #2498) — thanks @drakeo338, @Bad-ptr!
 - A reference over 20 s with no speech-to-text model says it is too long and to trim it to 3-10 s (#2442) — thanks @drakeo338, @Bad-ptr!
 - A generate can no longer crash the backend while the start-up model preload is still running (#2394) — thanks @manoooo202020!
